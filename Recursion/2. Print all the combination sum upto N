@@ -1,0 +1,25 @@
+// Print all the combination has sum upto namespace
+
+#include <bits/stdc++.h>
+#define pb push_back
+#define pp pop_back
+using namespace std;
+
+void possibleCombiSum(int n, vector<int>&v){
+    if(n==0){
+        for (auto x: v) cout << x << " ";
+        cout << endl;
+        return;
+    }
+    for (int i = 1; i<=n; i++){
+        v.pb(i);
+        possibleCombiSum(n-i,v);
+        v.pp();
+    }
+}
+int main(){
+    int n;
+    cin >> n;
+    vector<int> v;
+    possibleCombiSum(n,v);
+}
